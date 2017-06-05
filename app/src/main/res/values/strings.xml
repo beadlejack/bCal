@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">bCal</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">SCU Calendar</string>
+    <string name="date_format">yyyy-MM-dd</string>
+    <string name="time_format">hh:mm a</string>
 </resources>
