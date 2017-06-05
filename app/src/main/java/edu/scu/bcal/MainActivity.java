@@ -1,4 +1,4 @@
-package edu.scu.bcal_v2;
+package edu.scu.bcal;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

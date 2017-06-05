@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">bCal_v2</string>
+    <string name="app_name">bCal</string>
     <string name="title_activity_main">MainActivity</string>
 </resources>
