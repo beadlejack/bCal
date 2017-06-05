@@ -32,7 +32,7 @@
         android:id="@+id/today"
         android:text="TODAY"
         android:onClick="todaysDate"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="350dp"
         android:layout_gravity="center_horizontal"/>
 
     <android.support.design.widget.FloatingActionButton
