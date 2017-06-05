@@ -26,6 +26,15 @@
         android:layout_height="fill_parent"
         android:layout_marginTop="35dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/today"
+        android:text="TODAY"
+        android:onClick="todaysDate"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center_horizontal"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
