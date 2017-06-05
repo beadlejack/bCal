@@ -4,6 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.scu.bcal.newEvent">
+    tools:context="edu.scu.bcal.NewEvent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Event Name"
+            android:inputType="text|textCapWords|textAutoCorrect"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editTextTitle"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editTextTitle"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="date" />
+
+            <CheckBox
+                android:id="@+id/checkBoxAllDay"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:checked="false"
+                android:text="All Day"
+                android:textAlignment="viewStart" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linearLayoutDate"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp">
+
+            <EditText
+                android:id="@+id/editTextStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/linearLayoutTime"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Start Time"
+                android:inputType="time" />
+
+            <EditText
+                android:id="@+id/editTextEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/linearLayoutTime"
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@+id/editTextStartTime"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="End Time"
+                android:inputType="time" />
+
+        </LinearLayout>
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/editTextViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentEnd="false"
+            android:layout_below="@+id/linearLayoutTime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:hint="Enter event discription"
+            android:gravity="top|left" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
