@@ -32,7 +32,7 @@ public class FirebaseLogin extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    Intent goToMain = new Intent(FirebaseLogin.this, MainActivity.class);
+                    Intent goToMain = new Intent(FirebaseLogin.this, NewEvent.class);
                     goToMain.setAction(getIntent().ACTION_MAIN);
                     startActivity(goToMain);
                 } else {

@@ -4,4 +4,7 @@
     <string name="date_format">yyyy-MM-dd</string>
     <string name="time_format">hh:mm a</string>
     <string name="menu_today">Today</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
