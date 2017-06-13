@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">bCal</string>
     <string name="title_activity_main">SCU Calendar</string>
-    <string name="date_format">yyyy-MM-dd</string>
-    <string name="time_format">hh:mm a</string>
+    <string name="date_format_store">yyyy-MM-dd</string>
+    <string name="date_format_display">MM/dd/yyyy</string>
+    <string name="time_format_store">HH:mm</string>
+    <string name="time_format_display">hh:mm a</string>
     <string name="menu_today">Today</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
