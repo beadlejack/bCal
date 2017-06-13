@@ -13,7 +13,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <EditText
-            android:id="@+id/editTextTitle"
+            android:id="@+id/editTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -26,34 +26,34 @@
             tools:layout_editor_absoluteY="16dp" />
 
         <EditText
-            android:id="@+id/editTextLocation"
+            android:id="@+id/editLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextTitle"
+            android:layout_below="@+id/editTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/ic_room_black_24dp"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="Location"
-            android:inputType="textPersonName" />
+            android:inputType="text|textCapWords|textAutoCorrect" />
 
         <LinearLayout
             android:id="@+id/linearLayoutDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editTextLocation"
+            android:layout_below="@+id/editLocation"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/editDate"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/editTextLocation"
+                android:layout_below="@+id/editLocation"
                 android:drawableLeft="@drawable/ic_date_range_black_24dp"
                 android:drawablePadding="10dp"
                 android:ems="10"
@@ -66,8 +66,8 @@
                 android:id="@+id/checkBoxAllDay"
                 android:layout_width="113dp"
                 android:layout_height="match_parent"
-                android:layout_alignBaseline="@+id/editTextDate"
-                android:layout_alignBottom="@+id/editTextDate"
+                android:layout_alignBaseline="@+id/editDate"
+                android:layout_alignBottom="@+id/editDate"
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="50dp"
                 android:layout_weight="1"
@@ -77,7 +77,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutTime"
+            android:id="@+id/layoutTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -86,11 +86,11 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextStartTime"
+                android:id="@+id/editStartTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/linearLayoutTime"
+                android:layout_below="@+id/layoutTime"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
@@ -98,36 +98,43 @@
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Start Time"
-                android:inputType="time" />
+                android:inputType="time"
+                android:clickable="true"
+                android:focusable="false"/>
 
             <EditText
-                android:id="@+id/editTextEndTime"
+                android:id="@+id/editEndTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/linearLayoutTime"
+                android:layout_below="@+id/layoutTime"
                 android:layout_marginTop="0dp"
-                android:layout_toRightOf="@+id/editTextStartTime"
+                android:layout_toRightOf="@+id/editStartTime"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_access_time_black_24dp"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="End Time"
-                android:inputType="time" />
+                android:inputType="time"
+                android:clickable="true"
+                android:focusable="false" />
 
         </LinearLayout>
 
         <MultiAutoCompleteTextView
-            android:id="@+id/editTextViewDescription"
+            android:id="@+id/editDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/submitEventButton"
             android:layout_alignParentEnd="false"
-            android:layout_below="@+id/linearLayoutTime"
+            android:layout_below="@+id/layoutTime"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_subject_black_24dp"
             android:gravity="top|left"
-            android:hint="Enter event discription" />
+            android:hint="Enter event description"
+            android:inputType="textMultiLine|textAutoComplete|textAutoCorrect|textCapSentences"/>
 
         <Button
             android:id="@+id/submitEventButton"
@@ -136,7 +143,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
-            android:text="Submit" />
+            android:text="Submit"
+            android:onClick="submitEvent()"/>
 
         <DatePicker
             android:layout_width="wrap_content"
@@ -147,6 +155,17 @@
             android:visibility="invisible"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
+
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker"
+            android:foregroundGravity="center_horizontal|bottom"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/layoutTime"
+            android:timePickerMode="spinner"/>
 
     </RelativeLayout>
 
