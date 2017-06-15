@@ -6,4 +6,6 @@
     <string name="time_format_store">HH:mm</string>
     <string name="time_format_display">hh:mm a</string>
     <string name="menu_today">Today</string>
+    <string name="title_event_list">Events</string>
+    <string name="title_event_detail">Event Detail</string>
 </resources>
