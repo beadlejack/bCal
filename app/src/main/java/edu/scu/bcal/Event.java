@@ -21,14 +21,14 @@ public class Event {
     public String date;
     public String description;
     public String location;
-    public String creator;
     public boolean allDay;
 
     public Event() {
         // Default constructor for calls to DataSnapshot.getValue(Event.class)
     }
 
-    public Event(String title, String location, String date, String startTime, String endTime, String description, boolean allDay) {
+    public Event(String uid, String title, String location, String date, String startTime, String endTime, String description, boolean allDay) {
+        this.uid = uid;
         this.title = title;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -51,6 +51,17 @@ public class Event {
         result.put("location", location);
 
         return result;
+    }
+
+    public void setEqualTo(Event b) {
+        uid = b.uid;
+        title = b.title;
+        startTime = b.startTime;
+        endTime = b.endTime;
+        date = b.date;
+        description = b.description;
+        allDay = b.allDay;
+        location = b.location;
     }
 
 }

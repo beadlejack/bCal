@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_bcal"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventListActivity">
+        <activity android:name=".FirebaseLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,10 +23,10 @@
         <activity
             android:name=".NewEvent"
             android:label="New Event" />
-        <!--<activity
+        <activity
             android:name=".EventListActivity"
             android:label="@string/title_event_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>-->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EventDetailActivity"
             android:label="@string/title_event_detail"
@@ -36,6 +36,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.scu.bcal.EventListActivity" />
         </activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

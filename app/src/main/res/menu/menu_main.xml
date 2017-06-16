@@ -5,8 +5,7 @@
     tools:context="edu.scu.calendar.MainActivity">
     <item
         android:id="@+id/menu_today"
+        android:icon="@drawable/ic_today_black_24dp"
         android:title="Today"
-        android:icon="@android:drawable/ic_menu_day"
-        app:showAsAction="ifRoom"
-        />
+        app:showAsAction="always" />
 </menu>

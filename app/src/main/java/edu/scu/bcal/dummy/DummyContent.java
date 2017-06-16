@@ -5,8 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static edu.scu.bcal.dummy.DummyContent.Event.description;
-
+/**
+ * Helper class for providing sample content for user interfaces created by
+ * Android template wizards.
+ * <p>
+ * TODO: Replace all uses of this class before publishing your app.
+ */
 public class DummyContent {
 
     /**
@@ -21,75 +25,58 @@ public class DummyContent {
 
     private static final int COUNT = 25;
 
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
-    }
+//    static {
+//        // Add some sample items.
+//        for (int i = 1; i <= COUNT; i++) {
+//            addItem(createDummyItem(i));
+//        }
+//    }
 
     private static void addItem(DummyItem item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.uid, item);
+        ITEM_MAP.put(item.id, item);
     }
 
-    private static DummyItem createDummyItem(int id) {
-        return new DummyItem(String.valueOf(id), Event.title, makeDetails(id));
-    }
+//    private static DummyItem createDummyItem(int position) {
+//        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+//    }
 
-    private static String makeDetails(int id) {//don't know about id thing
+    private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
-        builder.append("Location: ").append(Event.location);
-        builder.append("Date: ").append(Event.date);
-        if(!Event.allDay) {
-            builder.append("Start Time: ").append(Event.startTime);
-            builder.append("End Time: ").append(Event.endTime);
+        builder.append("Details about Item: ").append(position);
+        for (int i = 0; i < position; i++) {
+            builder.append("\nMore details information here.");
         }
-        else builder.append("All-day event");
-        builder.append("Description: ").append(description);
         return builder.toString();
-    }
-
-    public static class Event {
-        public final String eid;
-        public static String title;
-        public static String location;
-        public static String date;
-        public static String startTime;
-        public static String endTime;
-        public static String description;
-        public static boolean allDay;
-
-        public Event(String eid, String title, String location, String date, String startTime, String endTime, String description) {
-            this.eid = eid;
-            this.title = title;
-            this.location = location;
-            this.date = date;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.description = description;
-            this.allDay = allDay;
-        }
     }
 
     /**
      * A dummy item representing a piece of content.
      */
-
     public static class DummyItem {
-        public final String uid;
-        public final String content;
-        public final String details;
+        public final String id;
+        public final String title;
+        public final String location;
+        public final String startTime;
+        public final String endTime;
+        public final String description;
+        public final String date;
+        public final boolean allDay;
 
-        public DummyItem(String uid, String content, String details) {
-            this.uid = uid;
-            this.content = content;
-            this.details = details;
+        public DummyItem(String id, String title, String location, String startTime, String endTime, String description, String date, boolean allDay) {
+            this.id = id;
+            this.title = title;
+            this.location = location;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.description = description;
+            this.date = date;
+            this.allDay = allDay;
         }
 
-    @Override
+        @Override
         public String toString() {
-            return content;
+            return title;
         }
     }
 }

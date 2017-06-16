@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
@@ -28,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-class NewEvent extends AppCompatActivity {
+public class NewEvent extends AppCompatActivity {
 
     static private Date eventDate, startTimeDate, endTimeDate;
     static private EditText editDate, startTime, endTime, title, location;
@@ -239,15 +240,19 @@ class NewEvent extends AppCompatActivity {
         storeLocation = location.getText().toString();
         storeDescription = description.getText().toString();
 
-        Event newEvent = new Event(storeTitle, storeLocation, storeDate,
-                                    storeStart, storeEnd, storeDescription, allDay.isChecked());
-
         String key = mDatabase.child("events").push().getKey();
-        newEvent.uid = key;
+
+        Event newEvent = new Event(key, storeTitle, storeLocation, storeDate,
+                storeStart, storeEnd, storeDescription, allDay.isChecked());
+
         Map<String, Object> eventValues = newEvent.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("/events/" + key, eventValues);
         mDatabase.updateChildren(childUpdates);
+
+        Intent goToMain = new Intent(NewEvent.this, EventListActivity.class);
+        goToMain.setAction(getIntent().ACTION_MAIN);
+        startActivity(goToMain);
     }
 
     private boolean checkInputs() {
